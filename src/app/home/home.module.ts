@@ -3,49 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HomeComponent } from './home.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { CometChatConversationList, CometChatMessageList, CometChatConversationsWithMessages } from 'uikit-library-ang';
-import { CustomEmptyStateComponent } from '../guides/custom-empty-state/custom-empty-state.component';
-import { CustomErrorStateComponent } from '../guides/custom-error-state/custom-error-state.component';
-import { CustomLoadingStateComponent } from '../guides/custom-loading-state/custom-loading-state.component';
-import { MessageAlignmentComponent } from '../guides/message-alignment/message-alignment.component';
-import { CustomSoundManagerComponent } from '../guides/custom-sound-manager/custom-sound-manager.component';
-import { ExcludeMessageTypesComponent } from '../guides/exclude-message-types/exclude-message-types.component';
-import { ExcludeMessageOptionsComponent } from '../guides/exclude-message-options/exclude-message-options.component';
-import { CustomMessageBubbleComponent } from '../guides/custom-message-bubble/custom-message-bubble.component';
-import { CustomMessageOptionsComponent } from '../guides/custom-message-options/custom-message-options.component';
-import { CustomMessageTypesComponent } from '../guides/custom-message-types/custom-message-types.component';
-import {CometChatMessages} from 'uikit-library-ang'
-import { MessageThemeComponent } from '../guides/message-theme/message-theme.component';
-import { PredefinedMessageOptionsComponent } from '../guides/predefined-message-options/predefined-message-options.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { UsersModule } from '../users/users.module';
+import { GroupsModule } from '../groups/groups.module';
+import { MessagesModule } from '../messages/messages.module';
+import { ChatsModule } from '../chats/chats.module';
+const appRoutes: Routes = [
+  { path: 'shared', component: SharedModule },
+  { path: 'chats',        component: ChatsModule },
+  { path: 'messages',   component: MessagesModule },
+  { path: 'users', component: UsersModule },
+  { path: 'groups', component: GroupsModule },
+];
 @NgModule({
   declarations: [
     HomeComponent,
-    CustomEmptyStateComponent,
-    CustomErrorStateComponent,
-    CustomLoadingStateComponent,
-    MessageAlignmentComponent,
-    CustomSoundManagerComponent,
-    ExcludeMessageTypesComponent,
-    ExcludeMessageOptionsComponent,
-    CustomMessageBubbleComponent,
-    CustomMessageOptionsComponent,
-    CustomMessageTypesComponent,
-    MessageThemeComponent,
-    PredefinedMessageOptionsComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
-    FormsModule,
-    CometChatConversationList,
-    CometChatMessageList,
-    CometChatMessages,
-    CometChatConversationsWithMessages
-    
+    // RouterModule.forRoot(
+    //   appRoutes,
+  
+    // ),
+    FormsModule
   ],
-  exports: [HomeComponent],
   providers: [],
   bootstrap: [HomeComponent]
 })

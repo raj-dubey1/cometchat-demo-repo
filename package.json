@@ -21,7 +21,7 @@
     "@cometchat-pro/chat": "^3.0.10",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "uikit-library-ang": "^0.1.6",
+    "@cometchat-pro/angular-ui-kit": "^3.0.10-pluto.beta.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
